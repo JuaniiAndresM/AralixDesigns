@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$gradient-color1: #2a026e;
+$gradient-color2: #7200ff;
+$gradient-color3: #d200ff;
+
+body{
+    font-family: 'Comfortaa', 'sans-serif';
+}
+.bg-gradient{
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, $gradient-color1, $gradient-color2 50%);
+}
+
+
+/*-------------------------------------------
+
+Header
+
+-------------------------------------------*/
+
+header{
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header__content{
+        width:  calc(100% - 120px);
+        height: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header__logo{
+            width: 200px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                height: 50%;
+            }
+        }
+
+        .header__links{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a{
+                text-decoration: none;
+                color: white;
+                margin-left: 4em;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            a::after{
+                top: 5px;
+                content: '';
+                width: 0%;
+                height: 2px;
+                border-radius: 1em;
+                background-color: white;
+                position: relative;
+                transition: .5s;
+            }
+
+            .active{
+                color: $gradient-color3;
+            }
+            .active::after{
+                background-color: $gradient-color3;
+            }
+
+            a:hover::after{
+                width: 100%;
+            }
+        }
+        .burger-menu{
+            display: none;
+            margin: 20px;
+
+            i{
+                color: white;
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+/*-------------------------------------------
+
+Landing Page
+
+-------------------------------------------*/
+
+.landingpage{
+    width: 100vw;
+    height: calc(100vh - 120px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .landingpage__wrapper{
+        width: calc(100% - 120px);
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .landingpage__content{
+            padding: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .landingpage__title{
+                color: white;
+                font-size: 3em;
+            }
+            p{
+                margin: 20px 0;
+                color: white;
+            }
+        }
+    
+        .landingpage__illustration{
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            img{
+                width: 40%;
+            }
+        }
+
+        .landingpage__arrow{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i{
+                color: white;
+                font-size: 2em;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    header{
+        .header__content{
+            width: 90%;
+            .header__links{
+                display: none;
+            }
+            .burger-menu{
+                display: block;
+            }
+        }
+    }
+
+    .landingpage{
+        .landingpage__wrapper{
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap-reverse;
+
+            .landingpage__content{
+                text-align: center;
+                .landingpage__title{
+                    font-size: 2em;
+                }
+            }
+
+            .landingpage__illustration{
+                img{
+                    width: 180px;
+                }
+            }
+            .landingpage__arrow{
+                position: inherit;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

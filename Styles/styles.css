@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comfortaa', 'sans-serif';
+}
+
+.bg-gradient {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(120deg, #2a026e, #7200ff 50%);
+}
+
+/*-------------------------------------------
+
+Header
+
+-------------------------------------------*/
+header {
+  width: 100%;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header__content {
+  width: calc(100% - 120px);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header__content .header__logo {
+  width: 200px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header__content .header__logo img {
+  height: 50%;
+}
+
+header .header__content .header__links {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header__content .header__links a {
+  text-decoration: none;
+  color: white;
+  margin-left: 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header .header__content .header__links a::after {
+  top: 5px;
+  content: '';
+  width: 0%;
+  height: 2px;
+  border-radius: 1em;
+  background-color: white;
+  position: relative;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+header .header__content .header__links .active {
+  color: #d200ff;
+}
+
+header .header__content .header__links .active::after {
+  background-color: #d200ff;
+}
+
+header .header__content .header__links a:hover::after {
+  width: 100%;
+}
+
+header .header__content .burger-menu {
+  display: none;
+  margin: 20px;
+}
+
+header .header__content .burger-menu i {
+  color: white;
+  font-size: 2em;
+}
+
+/*-------------------------------------------
+
+Landing Page
+
+-------------------------------------------*/
+.landingpage {
+  width: 100vw;
+  height: calc(100vh - 120px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.landingpage .landingpage__wrapper {
+  width: calc(100% - 120px);
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.landingpage .landingpage__wrapper .landingpage__content {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.landingpage .landingpage__wrapper .landingpage__content .landingpage__title {
+  color: white;
+  font-size: 3em;
+}
+
+.landingpage .landingpage__wrapper .landingpage__content p {
+  margin: 20px 0;
+  color: white;
+}
+
+.landingpage .landingpage__wrapper .landingpage__illustration {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landingpage .landingpage__wrapper .landingpage__illustration img {
+  width: 40%;
+}
+
+.landingpage .landingpage__wrapper .landingpage__arrow {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landingpage .landingpage__wrapper .landingpage__arrow i {
+  color: white;
+  font-size: 2em;
+}
+
+@media screen and (max-width: 1000px) {
+  header .header__content {
+    width: 90%;
+  }
+  header .header__content .header__links {
+    display: none;
+  }
+  header .header__content .burger-menu {
+    display: block;
+  }
+  .landingpage .landingpage__wrapper {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+  }
+  .landingpage .landingpage__wrapper .landingpage__content {
+    text-align: center;
+  }
+  .landingpage .landingpage__wrapper .landingpage__content .landingpage__title {
+    font-size: 2em;
+  }
+  .landingpage .landingpage__wrapper .landingpage__illustration img {
+    width: 180px;
+  }
+  .landingpage .landingpage__wrapper .landingpage__arrow {
+    position: inherit;
+    margin-bottom: 20px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
