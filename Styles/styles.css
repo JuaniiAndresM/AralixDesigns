@@ -6,6 +6,51 @@
           box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #7200ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a200ff;
+  border-radius: 10px;
+}
+
+.scrollTop {
+  position: fixed;
+  z-index: 50;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 50%;
+  border: none;
+  background: -webkit-gradient(linear, left top, right top, from(#5800c4), to(#7200ff));
+  background: linear-gradient(to right, #5800c4, #7200ff);
+  -webkit-box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.scrollTop i {
+  color: white;
+  font-size: 2em;
+}
+
+.scrollTop:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Comfortaa', 'sans-serif';
 }
@@ -13,7 +58,7 @@ body {
 .bg-gradient {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: 0;
   left: 0;
@@ -84,7 +129,7 @@ header .header__content .header__links {
           align-items: center;
 }
 
-header .header__content .header__links a {
+header .header__content .header__links .link {
   text-decoration: none;
   color: white;
   margin-left: 4em;
@@ -103,7 +148,7 @@ header .header__content .header__links a {
           flex-direction: column;
 }
 
-header .header__content .header__links a::after {
+header .header__content .header__links .link::after {
   top: 5px;
   content: '';
   width: 0%;
@@ -123,8 +168,27 @@ header .header__content .header__links .active::after {
   background-color: #d200ff;
 }
 
-header .header__content .header__links a:hover::after {
+header .header__content .header__links .link:hover::after {
   width: 100%;
+}
+
+header .header__content .header__links .login-button {
+  text-decoration: none;
+  font-family: 'Comfortaa', 'sans-serif';
+  color: white;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  margin-left: 2em;
+  border: 1px solid #7200ff;
+  background: linear-gradient(200deg, #D200FB, #8B00A6);
+  border-radius: 3em;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+header .header__content .header__links .login-button:hover {
+  background: linear-gradient(200deg, #8B00A6, #9300FF);
 }
 
 header .header__content .burger-menu {
@@ -137,13 +201,133 @@ header .header__content .burger-menu i {
   font-size: 2em;
 }
 
+.login-wrapper {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(114, 0, 255, 0.5);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-animation: .5s fadeOpening ease-in-out forwards;
+          animation: .5s fadeOpening ease-in-out forwards;
+}
+
+.login-wrapper .login-frame {
+  max-width: 600px;
+  padding: 10px 30px;
+  background: white;
+  border-radius: 2em;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-animation: 1s loginform ease-in-out forwards;
+          animation: 1s loginform ease-in-out forwards;
+}
+
+.login-wrapper .login-frame .login-logo {
+  width: 200px;
+  padding: 20px;
+}
+
+.login-wrapper .login-frame .login-form {
+  width: 300px;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.login-wrapper .login-frame .login-form h1 {
+  color: #7200ff;
+}
+
+.login-wrapper .login-frame .login-form input {
+  width: 100%;
+  height: 40px;
+  margin: 5px 0;
+  font-family: 'Comfortaa', 'sans-serif';
+  border: none;
+  border-bottom: 1px solid #7200ff;
+  outline: none;
+  padding: 10px;
+  color: #7200ff;
+}
+
+.login-wrapper .login-frame .login-form input[type="submit"] {
+  width: 150px;
+  background-color: #7200ff;
+  color: white;
+  border-radius: 2em;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+.login-wrapper .login-frame .login-form input[type="submit"]:hover {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#7200ff), to(#d200ff));
+  background: linear-gradient(to right, #7200ff, #d200ff);
+}
+
+.login-wrapper .login-frame .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #7200ff;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.login-wrapper .login-frame .close i {
+  font-size: 1.5em;
+}
+
+.login-wrapper .login-frame .close:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
 /*-------------------------------------------
 
 Landing Page
 
 -------------------------------------------*/
 .landingpage {
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 120px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,9 +359,6 @@ Landing Page
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -232,6 +413,103 @@ Landing Page
   font-size: 2em;
 }
 
+/*-------------------------------------------
+
+Section
+
+-------------------------------------------*/
+.vector-top {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  top: 5px;
+}
+
+.vector-bottom {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  -webkit-transform: scale(-1);
+          transform: scale(-1);
+  top: -5px;
+}
+
+.first-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px 0;
+  width: 100%;
+  background: white;
+}
+
+.first-section .title {
+  background: -webkit-gradient(linear, left top, right top, from(#2a026e), to(#7200ff));
+  background: linear-gradient(to right, #2a026e, #7200ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2em;
+}
+
+/*-------------------------------------------
+
+Animations
+
+-------------------------------------------*/
+@-webkit-keyframes fadeOpening {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOpening {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes loginform {
+  0% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes loginform {
+  0% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+/*-------------------------------------------
+
+Responsive Design
+
+-------------------------------------------*/
 @media screen and (max-width: 1000px) {
   header .header__content {
     width: 90%;

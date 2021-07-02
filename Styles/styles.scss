@@ -10,14 +10,56 @@ $gradient-color1: #2a026e;
 $gradient-color2: #7200ff;
 $gradient-color3: #d200ff;
 
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background-color: $gradient-color2;
+}
+::-webkit-scrollbar-thumb {
+    background: #a200ff;
+    border-radius: 10px;
+}
+
+.scrollTop{
+    position: fixed;
+    z-index: 50;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+
+    cursor: pointer;
+    transition: 0.5s;
+
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(to right, #5800c4, $gradient-color2);
+
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.5);
+
+    i{
+        color: white;
+        font-size: 2em;
+    }
+    
+}
+.scrollTop:hover{
+    transform: scale(1.2);
+}
+
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Comfortaa', 'sans-serif';
 }
+
 .bg-gradient{
     width: 100vw;
     height: 100vh;
 
-    position: absolute;
+    position: fixed;
     z-index: -1;
     top: 0;
     left: 0;
@@ -65,7 +107,7 @@ header{
             justify-content: center;
             align-items: center;
 
-            a{
+            .link{
                 text-decoration: none;
                 color: white;
                 margin-left: 4em;
@@ -75,7 +117,7 @@ header{
                 align-items: center;
                 flex-direction: column;
             }
-            a::after{
+            .link::after{
                 top: 5px;
                 content: '';
                 width: 0%;
@@ -93,8 +135,28 @@ header{
                 background-color: $gradient-color3;
             }
 
-            a:hover::after{
+            .link:hover::after{
                 width: 100%;
+            }
+
+            .login-button{
+                text-decoration: none;
+                font-family: 'Comfortaa', 'sans-serif';
+                color: white;
+
+                cursor: pointer;
+
+                width: 200px;
+                height: 50px;
+                margin-left: 2em;
+
+                border: 1px solid $gradient-color2;
+                background: linear-gradient(200deg, #D200FB, #8B00A6);
+                border-radius: 3em;
+                transition: .5s;
+            }
+            .login-button:hover{
+                background: linear-gradient(200deg, #8B00A6, #9300FF);
             }
         }
         .burger-menu{
@@ -109,6 +171,100 @@ header{
     }
 }
 
+
+.login-wrapper{
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #7200ff, $alpha: 0.5);
+    transition: 1s;
+    animation: .5s fadeOpening ease-in-out forwards;
+
+    .login-frame{
+        max-width: 600px;
+        padding: 10px 30px;
+        background: white;
+        border-radius: 2em;
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        animation: 1s loginform ease-in-out forwards;
+
+        .login-logo{
+            width: 200px;
+            padding: 20px;
+        }
+        .login-form{
+            width: 300px;
+            padding: 40px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            h1{
+                color: $gradient-color2;
+            }
+            input{
+                width: 100%;
+                height: 40px;
+                margin: 5px 0;
+                font-family: 'Comfortaa', 'sans-serif';
+
+                border: none;
+                border-bottom: 1px solid $gradient-color2;
+
+                outline: none;
+                padding: 10px;
+                color: $gradient-color2;
+            }
+            input[type="submit"]{
+                width: 150px;
+                background-color: $gradient-color2;
+                color: white;
+                border-radius: 2em;
+                border: none;
+                cursor: pointer;
+                transition: width 1s;
+            }
+            input[type="submit"]:hover{
+                width: 100%;
+                background: linear-gradient(to right, $gradient-color2, $gradient-color3);
+            }
+        }
+        .close{
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: $gradient-color2;
+            text-decoration: none;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+
+            transition: .5s;
+
+            i{
+                font-size: 1.5em;
+            }
+        }
+        .close:hover{
+            transform: scale(1.4);
+        }
+    }
+}
+
 /*-------------------------------------------
 
 Landing Page
@@ -116,7 +272,7 @@ Landing Page
 -------------------------------------------*/
 
 .landingpage{
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 120px);
 
     display: flex;
@@ -136,7 +292,6 @@ Landing Page
 
             display: flex;
             justify-content: center;
-            align-items: center;
             flex-direction: column;
 
             .landingpage__title{
@@ -179,6 +334,71 @@ Landing Page
     }
     
 }
+/*-------------------------------------------
+
+Section
+
+-------------------------------------------*/
+.vector-top{
+    position: relative;
+    width: 100%;
+    height: 200px;
+
+    top: 5px;
+}
+.vector-bottom{
+    position: relative;
+    width: 100%;
+    height: 200px;
+
+    transform: scale(-1);
+    top: -5px;
+}
+.first-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 40px 0;
+    width: 100%;
+    background: white;
+
+    .title{
+        background: linear-gradient(to right, $gradient-color1, $gradient-color2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2em;
+    }
+}
+/*-------------------------------------------
+
+Animations
+
+-------------------------------------------*/
+
+@keyframes fadeOpening{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes loginform{
+    0%{
+        transform: translateY(-200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+/*-------------------------------------------
+
+Responsive Design
+
+-------------------------------------------*/
 
 @media screen and (max-width: 1000px) {
     header{

@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="Javascript/Loader.js"></script>
     <script
       src="https://kit.fontawesome.com/1e193e3a23.js"
       crossorigin="anonymous"
@@ -12,7 +15,7 @@
 
     <link
       rel="shortcut icon"
-      href="media/svg/AralixFavicon.svg"
+      href="media/img/AralixFavicon.png"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="Styles/styles.css" />
@@ -22,19 +25,53 @@
   <body>
     <div class="bg-gradient"></div>
 
+    <button class="scrollTop" id="scrollTop" onclick="topFunction()">
+      <i class="fas fa-angle-up"></i>
+    </button>
+
+    <!--
+    
+        Login Frame
+
+    -->
+
+    <div class="login-wrapper">
+      <div class="login-frame">
+        <button class="close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <div class="login-logo">
+          <img src="media/svg/AralixFavicon.svg" alt="" />
+        </div>
+        <div class="login-form">
+          <h1>Login</h1>
+          <form action="" method="POST">
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    
+        Header
+
+    -->
+
     <header>
       <div class="header__content">
         <div class="header__logo">
           <img src="media/svg/AralixLogo.svg" alt="" />
         </div>
         <div class="header__links">
-          <a class="active" href="">Inicio</a>
-          <a href="">Servicios</a>
-          <a href="">Planes</a>
-          <a href="">Contacto</a>
+          <a class="link active" href="">Inicio</a>
+          <a class="link" href="">Servicios</a>
+          <a class="link" href="">Planes</a>
+          <a class="link" href="">Contacto</a>
+          <button class="login-button" onclick="loginModal()">Login</button>
         </div>
         <div class="burger-menu">
-            <i class="fas fa-bars"></i>
+          <i class="fas fa-bars"></i>
         </div>
       </div>
     </header>
@@ -47,15 +84,14 @@
     <section class="landingpage">
       <div class="landingpage__wrapper">
         <div class="landingpage__arrow">
-            <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-down"></i>
         </div>
         <div class="landingpage__content">
-          <h1 class="landingpage__title">Agencia de desarrollo web.</h1>
+          <h1 class="landingpage__title">
+            Agencia de desarrollo de sitios web.
+          </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            beatae debitis obcaecati sunt explicabo. Minus, harum itaque. Aut
-            commodi minus beatae nam error illo ipsa, id magnam reprehenderit,
-            expedita quasi!
+            En <b>Aralix</b> ofrecemos servicios de desarrollo de sitios web.
           </p>
         </div>
         <div class="landingpage__illustration">
@@ -63,5 +99,10 @@
         </div>
       </div>
     </section>
+    <img class="vector-top" src="media/svg/Vector.svg" alt="">
+    <section class="first-section">
+      <h1 class="title">Servicios</h1>
+    </section>
+    <img class="vector-bottom" src="media/svg/Vector.svg" alt="">
   </body>
 </html>
