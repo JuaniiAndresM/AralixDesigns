@@ -1,6 +1,20 @@
 $( document ).ready(function(){
-
+    $('#header').load('/AralixDesigns/Page/header.html');
+    $('#footer').load('/AralixDesigns/Page/footer.html');
 });
+
+function burger_menu(x) {
+    x.classList.toggle("change");
+
+    if (document.getElementById("links-mobile").style.transform == "translateY(0%)") {
+        document.getElementById("links-mobile").style.transform = "translateY(-120%)";
+        document.getElementById("arrow").style.display = "flex";
+    } else {
+        document.getElementById("links-mobile").style.transform = "translateY(-0%)";
+        document.getElementById("arrow").style.display = "none";
+    }
+}
+
 
 function loginModal(){
     $(".login-wrapper").css ("display", "flex");
