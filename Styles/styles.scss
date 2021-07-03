@@ -22,8 +22,9 @@ $gradient-color3: #d200ff;
 }
 
 .scrollTop{
+    display: none;
     position: fixed;
-    z-index: 50;
+    z-index: 40;
     width: 50px;
     height: 50px;
     bottom: 20px;
@@ -90,14 +91,23 @@ header{
         align-items: center;
 
         .header__logo{
+            position: relative;
+            z-index: 60;
             width: 200px;
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-
-            img{
-                height: 50%;
+            a{
+                width: 100%;
+                height: 100%;
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    height: 50%;
+                }
             }
         }
 
@@ -159,25 +169,122 @@ header{
                 background: linear-gradient(200deg, #8B00A6, #9300FF);
             }
         }
-        .burger-menu{
+        .burger-mobile {
+            position: relative;
+            z-index: 60;
             display: none;
-            margin: 20px;
-
-            i{
-                color: white;
-                font-size: 2em;
+            cursor: pointer;
+            margin: 0 20px;
+        
+            .bar1,
+            .bar2,
+            .bar3 {
+              width: 35px;
+              height: 5px;
+              background-color: white;
+              margin: 6px 0;
+              transition: 0.4s;
             }
         }
+        #links-mobile {
+            display: none;
+            transform: translateY(-120%);
+            position: absolute;
+            z-index: 50;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(120deg, rgba($color: $gradient-color1, $alpha: 0.5), $gradient-color2 75%);
+            transition: ease-in 0.3s;
+        
+                .links-wrapper{
+                    width: 100%;
+                    height: 100vh;
+        
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+        
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+        
+                        width: 100%;
+                        height: 50px;
+        
+                        text-align: center;
+                        color: white;
+                        font-size: 1.2em;
+                        text-decoration: none;
+                        margin: 10px 70px;
+        
+                        transition: 0.5s;
+        
+                        i {
+                            margin: 0 5px;
+                        }
+                    }
+                    a:hover {
+                        color: white;
+                        background-color: #7200ff;
+                    }
+                    .login-button{
+                        text-decoration: none;
+                        font-family: 'Comfortaa', 'sans-serif';
+                        color: white;
+        
+                        cursor: pointer;
+        
+                        width: 200px;
+                        height: 50px;
+                        font-size: 1.2em;
+        
+                        border: 1px solid $gradient-color2;
+                        background: linear-gradient(200deg, #D200FB, #8B00A6);
+                        border-radius: 3em;
+                        transition: .5s;
+                    }
+                    .login-button:hover{
+                        background: linear-gradient(200deg, #8B00A6, #9300FF);
+                    }
+                }
+            }
+        
+
     }
+
+    
+}
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+  
+.change .bar2 {
+    opacity: 0;
 }
 
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
 
+/*
+
+Login Frame
+
+
+*/
 .login-wrapper{
     display: none;
     justify-content: center;
     align-items: center;
 
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: 100;
     opacity: 0;
     width: 100vw;
@@ -516,12 +623,15 @@ Responsive Design
 @media screen and (max-width: 1000px) {
     header{
         .header__content{
-            width: 90%;
+            width: 100%;
             .header__links{
                 display: none;
             }
-            .burger-menu{
+            .burger-mobile{
                 display: block;
+            }
+            #links-mobile{
+                display: flex;
             }
         }
     }

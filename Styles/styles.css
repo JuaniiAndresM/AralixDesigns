@@ -20,8 +20,9 @@
 }
 
 .scrollTop {
+  display: none;
   position: fixed;
-  z-index: 50;
+  z-index: 40;
   width: 50px;
   height: 50px;
   bottom: 20px;
@@ -99,6 +100,8 @@ header .header__content {
 }
 
 header .header__content .header__logo {
+  position: relative;
+  z-index: 60;
   width: 200px;
   height: 100%;
   display: -webkit-box;
@@ -112,7 +115,22 @@ header .header__content .header__logo {
           align-items: center;
 }
 
-header .header__content .header__logo img {
+header .header__content .header__logo a {
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header__content .header__logo a img {
   height: 50%;
 }
 
@@ -191,16 +209,126 @@ header .header__content .header__links .login-button:hover {
   background: linear-gradient(200deg, #8B00A6, #9300FF);
 }
 
-header .header__content .burger-menu {
+header .header__content .burger-mobile {
+  position: relative;
+  z-index: 60;
   display: none;
-  margin: 20px;
+  cursor: pointer;
+  margin: 0 20px;
 }
 
-header .header__content .burger-menu i {
+header .header__content .burger-mobile .bar1,
+header .header__content .burger-mobile .bar2,
+header .header__content .burger-mobile .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header .header__content #links-mobile {
+  display: none;
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(120deg, rgba(42, 2, 110, 0.5), #7200ff 75%);
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+
+header .header__content #links-mobile .links-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header .header__content #links-mobile .links-wrapper a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50px;
+  text-align: center;
   color: white;
-  font-size: 2em;
+  font-size: 1.2em;
+  text-decoration: none;
+  margin: 10px 70px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
+header .header__content #links-mobile .links-wrapper a i {
+  margin: 0 5px;
+}
+
+header .header__content #links-mobile .links-wrapper a:hover {
+  color: white;
+  background-color: #7200ff;
+}
+
+header .header__content #links-mobile .links-wrapper .login-button {
+  text-decoration: none;
+  font-family: 'Comfortaa', 'sans-serif';
+  color: white;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  font-size: 1.2em;
+  border: 1px solid #7200ff;
+  background: linear-gradient(200deg, #D200FB, #8B00A6);
+  border-radius: 3em;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+header .header__content #links-mobile .links-wrapper .login-button:hover {
+  background: linear-gradient(200deg, #8B00A6, #9300FF);
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*
+
+Login Frame
+
+
+*/
 .login-wrapper {
   display: none;
   -webkit-box-pack: center;
@@ -210,6 +338,8 @@ header .header__content .burger-menu i {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
   opacity: 0;
   width: 100vw;
@@ -659,13 +789,18 @@ Responsive Design
 -------------------------------------------*/
 @media screen and (max-width: 1000px) {
   header .header__content {
-    width: 90%;
+    width: 100%;
   }
   header .header__content .header__links {
     display: none;
   }
-  header .header__content .burger-menu {
+  header .header__content .burger-mobile {
     display: block;
+  }
+  header .header__content #links-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .landingpage .landingpage__wrapper {
     width: 90%;

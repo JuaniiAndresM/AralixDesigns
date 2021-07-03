@@ -8,10 +8,8 @@ function burger_menu(x) {
 
     if (document.getElementById("links-mobile").style.transform == "translateY(0%)") {
         document.getElementById("links-mobile").style.transform = "translateY(-120%)";
-        document.getElementById("arrow").style.display = "flex";
     } else {
         document.getElementById("links-mobile").style.transform = "translateY(-0%)";
-        document.getElementById("arrow").style.display = "none";
     }
 }
 
