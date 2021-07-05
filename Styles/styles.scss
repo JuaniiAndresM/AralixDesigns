@@ -481,7 +481,8 @@ Section
   top: -5px;
 }
 .first-section,
-.second-section {
+.second-section,
+.third-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -583,30 +584,27 @@ Section
 
     .plan {
       width: 350px;
-      height: 600px;
+      min-height: 620px;
       margin: 10px;
 
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-direction: column;
 
       background: linear-gradient(45deg, $gradient-color1, $gradient-color2);
 
       border-radius: 2em;
       box-shadow: 5px 5px 10px 0 rgba($color: #000000, $alpha: 0.5);
+      user-select: none;
 
       transition: 0.5s;
 
       .plan-logo {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         margin: 20px;
-
-        background: linear-gradient(
-          to left,
-          $gradient-color1,
-          $gradient-color2
-        );
+        border: 3px solid white;
         border-radius: 50%;
 
         display: flex;
@@ -624,12 +622,12 @@ Section
 
         h2 {
           color: white;
-          font-size: 2em;
+          font-size: 1.6em;
           text-align: center;
         }
         .price {
           h3 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: white;
             text-align: center;
             margin: 5px;
@@ -645,7 +643,8 @@ Section
         }
         p {
           color: white;
-          margin: 10px 0;
+          margin: 10px;
+          font-size: 0.9em;
         }
       }
       .boton-plan {
@@ -662,6 +661,69 @@ Section
         text-decoration: none;
         color: white;
         background: linear-gradient(200deg, #d200fb, #8b00a6);
+      }
+    }
+    .plan:hover{
+      transform: scale(1.05);
+    }
+  }
+}
+.third-section{
+
+  p{
+    color: #555;
+    margin-top: -10px;
+    max-width: 900px;
+    text-align: center;
+  }
+  .contacto-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .contacto-logo{
+      width: 300px;
+      padding: 20px 40px;
+
+      img{
+        width: 90%;
+      }
+    }
+    .contacto-content{
+      max-width: 500px;
+      margin: 20px;
+
+      input, textarea{
+        width: 100%;
+        height: 40px;
+        margin: 10px 0;
+
+        font-family: 'Comfortaa', 'sans-serif';
+
+        color: $gradient-color2;
+
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $gradient-color2;
+        outline: none;
+      }
+      input:focus, textarea:focus{
+        border-bottom: 1px solid $gradient-color3;
+        color: $gradient-color3;
+      }
+      input[type="submit"]{
+        border: none;
+        background: $gradient-color2;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+      }
+
+      textarea{
+        height: 100px;
+        resize: none;
       }
     }
   }

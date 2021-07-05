@@ -582,7 +582,8 @@ Section
 }
 
 .first-section,
-.second-section {
+.second-section,
+.third-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -602,7 +603,8 @@ Section
 }
 
 .first-section .title,
-.second-section .title {
+.second-section .title,
+.third-section .title {
   background: -webkit-gradient(linear, left top, right top, from(#2a026e), to(#7200ff));
   background: linear-gradient(to right, #2a026e, #7200ff);
   background-clip: text;
@@ -613,7 +615,8 @@ Section
 }
 
 .first-section .servicios-wrapper,
-.second-section .servicios-wrapper {
+.second-section .servicios-wrapper,
+.third-section .servicios-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -632,7 +635,8 @@ Section
 }
 
 .first-section .servicios-wrapper hr,
-.second-section .servicios-wrapper hr {
+.second-section .servicios-wrapper hr,
+.third-section .servicios-wrapper hr {
   border: 1px solid #7200ff;
   width: 90%;
 }
@@ -640,7 +644,9 @@ Section
 .first-section .servicios-wrapper .servicios,
 .first-section .servicios-wrapper .servicios2,
 .second-section .servicios-wrapper .servicios,
-.second-section .servicios-wrapper .servicios2 {
+.second-section .servicios-wrapper .servicios2,
+.third-section .servicios-wrapper .servicios,
+.third-section .servicios-wrapper .servicios2 {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -659,14 +665,18 @@ Section
 .first-section .servicios-wrapper .servicios .servicios-img-wrapper,
 .first-section .servicios-wrapper .servicios2 .servicios-img-wrapper,
 .second-section .servicios-wrapper .servicios .servicios-img-wrapper,
-.second-section .servicios-wrapper .servicios2 .servicios-img-wrapper {
+.second-section .servicios-wrapper .servicios2 .servicios-img-wrapper,
+.third-section .servicios-wrapper .servicios .servicios-img-wrapper,
+.third-section .servicios-wrapper .servicios2 .servicios-img-wrapper {
   min-width: 250px;
 }
 
 .first-section .servicios-wrapper .servicios .servicios-img-wrapper img,
 .first-section .servicios-wrapper .servicios2 .servicios-img-wrapper img,
 .second-section .servicios-wrapper .servicios .servicios-img-wrapper img,
-.second-section .servicios-wrapper .servicios2 .servicios-img-wrapper img {
+.second-section .servicios-wrapper .servicios2 .servicios-img-wrapper img,
+.third-section .servicios-wrapper .servicios .servicios-img-wrapper img,
+.third-section .servicios-wrapper .servicios2 .servicios-img-wrapper img {
   padding: 20px;
   width: 100%;
 }
@@ -674,7 +684,9 @@ Section
 .first-section .servicios-wrapper .servicios .servicios-info,
 .first-section .servicios-wrapper .servicios2 .servicios-info,
 .second-section .servicios-wrapper .servicios .servicios-info,
-.second-section .servicios-wrapper .servicios2 .servicios-info {
+.second-section .servicios-wrapper .servicios2 .servicios-info,
+.third-section .servicios-wrapper .servicios .servicios-info,
+.third-section .servicios-wrapper .servicios2 .servicios-info {
   margin: 20px 40px;
   max-width: 700px;
 }
@@ -682,7 +694,9 @@ Section
 .first-section .servicios-wrapper .servicios .servicios-info h2,
 .first-section .servicios-wrapper .servicios2 .servicios-info h2,
 .second-section .servicios-wrapper .servicios .servicios-info h2,
-.second-section .servicios-wrapper .servicios2 .servicios-info h2 {
+.second-section .servicios-wrapper .servicios2 .servicios-info h2,
+.third-section .servicios-wrapper .servicios .servicios-info h2,
+.third-section .servicios-wrapper .servicios2 .servicios-info h2 {
   background: -webkit-gradient(linear, left top, right top, from(#2a026e), to(#7200ff));
   background: linear-gradient(to right, #2a026e, #7200ff);
   background-clip: text;
@@ -694,13 +708,16 @@ Section
 .first-section .servicios-wrapper .servicios .servicios-info p,
 .first-section .servicios-wrapper .servicios2 .servicios-info p,
 .second-section .servicios-wrapper .servicios .servicios-info p,
-.second-section .servicios-wrapper .servicios2 .servicios-info p {
+.second-section .servicios-wrapper .servicios2 .servicios-info p,
+.third-section .servicios-wrapper .servicios .servicios-info p,
+.third-section .servicios-wrapper .servicios2 .servicios-info p {
   color: #555;
   margin: 10px 0;
 }
 
 .first-section .servicios-wrapper .servicios2,
-.second-section .servicios-wrapper .servicios2 {
+.second-section .servicios-wrapper .servicios2,
+.third-section .servicios-wrapper .servicios2 {
   -ms-flex-wrap: wrap-reverse;
       flex-wrap: wrap-reverse;
 }
@@ -741,7 +758,7 @@ Section
 
 .second-section .planes-wrapper .plan {
   width: 350px;
-  height: 600px;
+  min-height: 620px;
   margin: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -749,6 +766,9 @@ Section
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -757,16 +777,19 @@ Section
   border-radius: 2em;
   -webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .second-section .planes-wrapper .plan .plan-logo {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   margin: 20px;
-  background: -webkit-gradient(linear, right top, left top, from(#2a026e), to(#7200ff));
-  background: linear-gradient(to left, #2a026e, #7200ff);
+  border: 3px solid white;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -791,12 +814,12 @@ Section
 
 .second-section .planes-wrapper .plan .plan-content h2 {
   color: white;
-  font-size: 2em;
+  font-size: 1.6em;
   text-align: center;
 }
 
 .second-section .planes-wrapper .plan .plan-content .price h3 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   color: white;
   text-align: center;
   margin: 5px;
@@ -814,7 +837,8 @@ Section
 
 .second-section .planes-wrapper .plan .plan-content p {
   color: white;
-  margin: 10px 0;
+  margin: 10px;
+  font-size: 0.9em;
 }
 
 .second-section .planes-wrapper .plan .boton-plan {
@@ -834,6 +858,77 @@ Section
   text-decoration: none;
   color: white;
   background: linear-gradient(200deg, #d200fb, #8b00a6);
+}
+
+.second-section .planes-wrapper .plan:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.third-section p {
+  color: #555;
+  margin-top: -10px;
+  max-width: 900px;
+  text-align: center;
+}
+
+.third-section .contacto-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.third-section .contacto-wrapper .contacto-logo {
+  width: 300px;
+  padding: 20px 40px;
+}
+
+.third-section .contacto-wrapper .contacto-logo img {
+  width: 90%;
+}
+
+.third-section .contacto-wrapper .contacto-content {
+  max-width: 500px;
+  margin: 20px;
+}
+
+.third-section .contacto-wrapper .contacto-content input, .third-section .contacto-wrapper .contacto-content textarea {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  font-family: 'Comfortaa', 'sans-serif';
+  color: #7200ff;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #7200ff;
+  outline: none;
+}
+
+.third-section .contacto-wrapper .contacto-content input:focus, .third-section .contacto-wrapper .contacto-content textarea:focus {
+  border-bottom: 1px solid #d200ff;
+  color: #d200ff;
+}
+
+.third-section .contacto-wrapper .contacto-content input[type="submit"] {
+  border: none;
+  background: #7200ff;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+}
+
+.third-section .contacto-wrapper .contacto-content textarea {
+  height: 100px;
+  resize: none;
 }
 
 /*-------------------------------------------
