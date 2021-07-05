@@ -679,6 +679,8 @@ Section
 .third-section .servicios-wrapper .servicios2 .servicios-img-wrapper img {
   padding: 20px;
   width: 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .first-section .servicios-wrapper .servicios .servicios-info,
@@ -720,6 +722,15 @@ Section
 .third-section .servicios-wrapper .servicios2 {
   -ms-flex-wrap: wrap-reverse;
       flex-wrap: wrap-reverse;
+}
+
+.first-section .servicios-wrapper .servicios:hover > .servicios-img-wrapper img, .first-section .servicios-wrapper .servicios2:hover > .servicios-img-wrapper img,
+.second-section .servicios-wrapper .servicios:hover > .servicios-img-wrapper img,
+.second-section .servicios-wrapper .servicios2:hover > .servicios-img-wrapper img,
+.third-section .servicios-wrapper .servicios:hover > .servicios-img-wrapper img,
+.third-section .servicios-wrapper .servicios2:hover > .servicios-img-wrapper img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .second-section .title {
@@ -1158,6 +1169,10 @@ footer .footer-bottom-bar p b {
   border-radius: 2em;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.error-wrapper .error-img a i {
+  margin: 0 5px;
 }
 
 .error-wrapper .error-img a:hover {

@@ -529,6 +529,7 @@ Section
         img {
           padding: 20px;
           width: 100%;
+          transition: .5s;
         }
       }
 
@@ -555,6 +556,9 @@ Section
     }
     .servicios2 {
       flex-wrap: wrap-reverse;
+    }
+    .servicios:hover > .servicios-img-wrapper img, .servicios2:hover > .servicios-img-wrapper img{
+      transform: scale(1.1);
     }
   }
 }
@@ -898,6 +902,10 @@ footer {
       background: linear-gradient(to right, $gradient-color1, $gradient-color2);
       border-radius: 2em;
       transition: 0.5s;
+
+      i{
+        margin: 0 5px;
+      }
     }
     a:hover {
       transform: scale(1.1);
