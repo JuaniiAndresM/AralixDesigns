@@ -23,18 +23,41 @@
     <title>Aralix - Diseño Web</title>
   </head>
   <body>
+    <!--
     
+        Gradient Background
+
+    -->
+
     <div class="bg-gradient"></div>
+
+    <!--
+    
+        Header
+
+    -->
 
     <div id="header"></div>
 
+    <!--
+    
+        Scroll Button
 
+    -->
 
     <button class="scrollTop" id="scrollTop" onclick="topFunction()">
       <i class="fas fa-angle-up"></i>
     </button>
 
+    <!--
+    
+        Scroll Indicator
 
+    -->
+
+    <div class="scroll-indicator" id="scroll-indicator">
+      <div class="progress-bar" id="bar"></div>
+    </div>
     <!--
     
         Login Frame
@@ -43,7 +66,9 @@
 
     <div class="login-wrapper">
       <div class="login-frame">
-        <button class="close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <button class="close" onclick="closeModal()">
+          <i class="fas fa-times"></i>
+        </button>
         <div class="login-logo">
           <img src="/AralixDesigns/media/svg/AralixFavicon.svg" alt="" />
         </div>
@@ -57,7 +82,6 @@
         </div>
       </div>
     </div>
-
 
     <!--
     
@@ -84,19 +108,189 @@
       </div>
     </section>
 
-
     <!--
     
         Servicios
 
     -->
 
-    <img class="vector-top" src="/AralixDesigns/media/svg/Vector.svg" alt="">
+    <img class="vector-top" src="/AralixDesigns/media/svg/Vector.svg" alt="" />
     <section class="first-section" id="Servicios">
       <h1 class="title">Servicios</h1>
-    </section>
-    <img class="vector-bottom" src="/AralixDesigns/media/svg/Vector.svg" alt="">
+      <div class="servicios-wrapper">
+        <div class="servicios">
+          <div class="servicios-img-wrapper">
+            <img src="media/svg/Coding.svg" alt="" />
+          </div>
+          <div class="servicios-info">
+            <h2>Diseño Web</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Asperiores, quod aliquid possimus nesciunt quis quaerat. Quisquam
+              veritatis fugit hic voluptate eveniet, minima exercitationem
+              architecto explicabo incidunt, deleniti animi enim mollitia!
+            </p>
+          </div>
+        </div>
 
+        <div class="servicios2">
+          <div class="servicios-info">
+            <h2>Responsive Design</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Asperiores, quod aliquid possimus nesciunt quis quaerat. Quisquam
+              veritatis fugit hic voluptate eveniet, minima exercitationem
+              architecto explicabo incidunt, deleniti animi enim mollitia!
+            </p>
+          </div>
+          <div class="servicios-img-wrapper">
+            <img src="media/svg/Workspace2.svg" alt="" />
+          </div>
+        </div>
+
+        <div class="servicios">
+          <div class="servicios-img-wrapper">
+            <img src="media/svg/SEO.svg" alt="" />
+          </div>
+          <div class="servicios-info">
+            <h2>Posicionamiento SEO</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Asperiores, quod aliquid possimus nesciunt quis quaerat. Quisquam
+              veritatis fugit hic voluptate eveniet, minima exercitationem
+              architecto explicabo incidunt, deleniti animi enim mollitia!
+            </p>
+          </div>
+        </div>
+
+        <div class="servicios2">
+          <div class="servicios-info">
+            <h2>Hosting Web</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Asperiores, quod aliquid possimus nesciunt quis quaerat. Quisquam
+              veritatis fugit hic voluptate eveniet, minima exercitationem
+              architecto explicabo incidunt, deleniti animi enim mollitia!
+            </p>
+          </div>
+          <div class="servicios-img-wrapper">
+            <img src="media/svg/Hosting.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <img
+      class="vector-bottom"
+      src="/AralixDesigns/media/svg/Vector.svg"
+      alt=""
+    />
+
+    <!--
+    
+        Planes
+
+    -->
+
+    <img class="vector-top" src="/AralixDesigns/media/svg/Vector.svg" alt="" />
+    <section class="second-section" id="Planes">
+      <h2 class="title">Planes</h2>
+      <div class="second-section-header">
+        <h3>¿No sabés que plan elegir?</h3>
+        <p>
+          Aqui te mostramos los diferentes planes que ofrecemos con información
+          acerca de cada uno de ellos, para que sepas cual elejir y que se
+          adapeta a tus necesidades.
+        </p>
+      </div>
+      <div class="planes-wrapper">
+
+
+        <div class="plan">
+          <div class="plan-logo">
+            <i class="far fa-file"></i>
+          </div>
+          <div class="plan-content">
+            <h2>OnePage</h2>
+            <hr />
+            <div class="price">
+              <p>Desde</p>
+              <h3 class="price">U$S 150</h3>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+              nobis.
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor a
+              labore ex ullam velit, deleniti molestiae obcaecati. Voluptatem,
+              cum fugit?
+            </p>
+          </div>
+          <a class="boton-plan" href="">Elegir Plan</a>
+        </div>
+
+
+        <div class="plan">
+          <div class="plan-logo">
+            <i class="far fa-copy"></i>
+          </div>
+          <div class="plan-content">
+            <h2>Multi Página</h2>
+            <hr />
+            <div class="price">
+              <p>Desde</p>
+              <h3 class="price">U$S 200</h3>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+              nobis.
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor a
+              labore ex ullam velit, deleniti molestiae obcaecati. Voluptatem,
+              cum fugit?
+            </p>
+          </div>
+          <a class="boton-plan" href="">Elegir Plan</a>
+        </div>
+
+
+        <div class="plan">
+          <div class="plan-logo">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <div class="plan-content">
+            <h2>Tienda Online</h2>
+            <hr />
+            <div class="price">
+              <p>Desde</p>
+              <h3 class="price">U$S 300</h3>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+              nobis.
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor a
+              labore ex ullam velit, deleniti molestiae obcaecati. Voluptatem,
+              cum fugit?
+            </p>
+          </div>
+          <a class="boton-plan" href="">Elegir Plan</a>
+        </div>
+      </div>
+    </section>
+    <img
+      class="vector-bottom"
+      src="/AralixDesigns/media/svg/Vector.svg"
+      alt=""
+    />
+
+    <!--
+    
+        Footer
+
+    -->
 
     <div id="footer"></div>
   </body>
