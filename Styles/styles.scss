@@ -287,12 +287,11 @@ header {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-/*
+/*-------------------------------------------
 
 Login Frame
 
-
-*/
+-------------------------------------------*/
 .login-wrapper {
   display: none;
   justify-content: center;
@@ -441,6 +440,7 @@ Landing Page
 
       img {
         width: 40%;
+        animation: ScaleEffect 1s infinite alternate linear;
       }
     }
 
@@ -460,7 +460,7 @@ Landing Page
       }
     }
   }
-  .burbujas{
+  .burbujas {
     width: 100%;
     height: 100vh;
 
@@ -470,85 +470,83 @@ Landing Page
     left: 0;
 
     overflow: hidden;
-    .burbuja{
+    .burbuja {
       border-radius: 50%;
       background: #fff;
-      opacity: .3;
+      opacity: 0.3;
 
       position: absolute;
       bottom: -150px;
-      
 
       animation: burbujas 3s linear infinite;
     }
-    .burbuja:nth-child(1){
+    .burbuja:nth-child(1) {
       width: 80px;
       height: 80px;
       left: 5%;
       animation-duration: 3s;
       animation-delay: 3s;
     }
-    .burbuja:nth-child(2){
+    .burbuja:nth-child(2) {
       width: 120px;
       height: 120px;
       left: 35%;
       animation-delay: 1.5s;
       animation-duration: 4s;
     }
-    .burbuja:nth-child(3){
+    .burbuja:nth-child(3) {
       width: 30px;
       height: 30px;
       left: 25%;
       animation-delay: 4s;
       animation-duration: 2s;
     }
-    .burbuja:nth-child(4){
+    .burbuja:nth-child(4) {
       width: 90px;
       height: 90px;
       left: 55%;
       animation-delay: 2s;
       animation-duration: 8s;
     }
-    .burbuja:nth-child(5){
+    .burbuja:nth-child(5) {
       width: 20px;
       height: 20px;
       left: 65%;
       animation-delay: 0.5s;
       animation-duration: 4s;
     }
-    .burbuja:nth-child(6){
+    .burbuja:nth-child(6) {
       width: 100px;
       height: 100px;
       left: 80%;
       animation-delay: 2s;
       animation-duration: 3s;
     }
-    .burbuja:nth-child(7){
+    .burbuja:nth-child(7) {
       width: 30px;
       height: 30px;
       left: 15%;
       animation-delay: 1.6s;
       animation-duration: 3s;
     }
-    .burbuja:nth-child(8){
+    .burbuja:nth-child(8) {
       width: 100px;
       height: 100px;
       left: 25%;
       animation-delay: 0.5s;
       animation-duration: 3s;
     }
-    .burbuja:nth-child(9){
+    .burbuja:nth-child(9) {
       width: 80px;
       height: 80px;
       left: 75%;
       animation-duration: 3s;
     }
-
   }
 }
 /*-------------------------------------------
 
-Section
+Section & First Section
 
 -------------------------------------------*/
 .vector-top {
@@ -614,7 +612,7 @@ Section
         img {
           padding: 20px;
           width: 100%;
-          transition: .5s;
+          transition: 0.5s;
         }
       }
 
@@ -642,11 +640,147 @@ Section
     .servicios2 {
       flex-wrap: wrap-reverse;
     }
-    .servicios:hover > .servicios-img-wrapper img, .servicios2:hover > .servicios-img-wrapper img{
+    .servicios:hover > .servicios-img-wrapper img,
+    .servicios2:hover > .servicios-img-wrapper img {
       transform: scale(1.1);
     }
   }
 }
+/*-------------------------------------------
+
+Plan Modal
+
+-------------------------------------------*/
+.plan-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba($color: $gradient-color1, $alpha: 0.8);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: 0.5s fadeOpening ease-in-out forwards;
+
+  .plan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px;
+
+    background: white;
+    border-radius: 2em;
+
+    animation: 1s loginform ease-in-out forwards;
+
+    .close{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      transition: .5s;
+
+      i{
+        color: $gradient-color2;
+        font-size: 2em;
+      }
+    }
+    .close:hover{
+      transform: scale(1.2);
+    }
+
+    .plan-logo {
+      max-width: 200px;
+      margin: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+    h1 {
+      background: linear-gradient(to right, $gradient-color1, $gradient-color2);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2{
+      color: $gradient-color2;
+      font-size: 1.4em;
+      margin: 5px 0;
+    }
+    p{
+      width: 90%;
+      text-align: center;
+      font-size: 0.9em;
+      color: $gradient-color2;
+    }
+    hr{
+      width: 90%;
+      border: 1px solid $gradient-color2;
+      margin: 10px 0;
+    }
+    .plan-modal-content{
+      margin-top: 10px;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      input, textarea{
+        width: 100%;
+        height: 40px;
+
+        margin: 5px 0;
+
+        color: $gradient-color2;
+
+        font-family: 'Comfortaa', 'sans-serif';
+
+        background: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $gradient-color2;
+      }
+
+      input[type="submit"]{
+        background: $gradient-color2;
+        color: white;
+        cursor: pointer;
+
+        border-radius: 10px;
+      }
+
+      textarea{
+        height: 100px;
+        resize: none;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------
+
+Second Section
+
+-------------------------------------------*/
 .second-section {
   .title {
     margin-bottom: 10px;
@@ -737,59 +871,61 @@ Section
         }
       }
       .boton-plan {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         margin: 10px;
 
         width: 200px;
         height: 50px;
 
+        font-family: "Comfortaa", "sans-serif";
+        font-size: 1em;
+        cursor: pointer;
+
+        border: none;
+        outline: none;
         border-radius: 2em;
         text-decoration: none;
         color: white;
         background: linear-gradient(200deg, #d200fb, #8b00a6);
       }
     }
-    .plan:hover{
+    .plan:hover {
       transform: scale(1.05);
     }
   }
 }
-.third-section{
-
-  p{
+.third-section {
+  p {
     color: #555;
     margin-top: -10px;
     max-width: 900px;
     text-align: center;
   }
-  .contacto-wrapper{
+  .contacto-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
-    .contacto-logo{
+    .contacto-logo {
       width: 300px;
       padding: 20px 40px;
 
-      img{
+      img {
         width: 90%;
       }
     }
-    .contacto-content{
+    .contacto-content {
       max-width: 500px;
       margin: 20px;
 
-      input, textarea{
+      input,
+      textarea {
         width: 100%;
         height: 40px;
         margin: 10px 0;
 
-        font-family: 'Comfortaa', 'sans-serif';
+        font-family: "Comfortaa", "sans-serif";
 
         color: $gradient-color2;
 
@@ -798,11 +934,12 @@ Section
         border-bottom: 1px solid $gradient-color2;
         outline: none;
       }
-      input:focus, textarea:focus{
+      input:focus,
+      textarea:focus {
         border-bottom: 1px solid $gradient-color3;
         color: $gradient-color3;
       }
-      input[type="submit"]{
+      input[type="submit"] {
         border: none;
         background: $gradient-color2;
         cursor: pointer;
@@ -810,7 +947,7 @@ Section
         border-radius: 10px;
       }
 
-      textarea{
+      textarea {
         height: 100px;
         resize: none;
       }
@@ -935,7 +1072,7 @@ footer {
 404 & 403
 
 -------------------------------------------*/
-.error-wrapper {
+.error-wrapper, .enviado-wrapper {
   width: 100%;
   height: calc(100vh - 120px);
 
@@ -943,7 +1080,7 @@ footer {
   justify-content: center;
   align-items: center;
 
-  .error-img {
+  .error-img, .enviado-img, .failed-img {
     max-width: 400px;
     background-color: white;
     border-radius: 2em;
@@ -988,12 +1125,24 @@ footer {
       border-radius: 2em;
       transition: 0.5s;
 
-      i{
+      i {
         margin: 0 5px;
       }
     }
     a:hover {
       transform: scale(1.1);
+    }
+  }
+  .enviado-img, .failed-img{
+    .enviado{
+      font-size: 10em;
+      color: #77dd77;
+      margin-bottom: 30px;
+    }
+    .failed{
+      font-size: 10em;
+      color: #dd7777;
+      margin-bottom: 30px;
     }
   }
 }
@@ -1002,7 +1151,7 @@ footer {
 Mail Design
 
 -------------------------------------------*/
-.test-wrapper{
+.test-wrapper {
   width: 100%;
   height: 100vh;
   background: linear-gradient(45deg, $gradient-color1, $gradient-color2);
@@ -1034,19 +1183,27 @@ Animations
   }
 }
 @keyframes burbujas {
-  0%{
+  0% {
     bottom: 0;
     opacity: 0;
   }
-  30%{
+  30% {
     transform: translateX(30px);
   }
-  50%{
-    opacity: .4;
+  50% {
+    opacity: 0.4;
   }
-  100%{
+  100% {
     bottom: 100vh;
     opacity: 0;
+  }
+}
+@keyframes ScaleEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
   }
 }
 /*-------------------------------------------

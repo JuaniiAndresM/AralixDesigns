@@ -80,3 +80,25 @@ function scrollIndicator() {
     progress_bar.style.display = "none";
   }
 }
+
+
+function elegirPlan(plan){
+  $.ajax({
+    type: "POST",
+    url: "Plan/modalPlan.php",
+    data: { 
+      Plan: plan
+    },
+    success: function (data) {
+      document.getElementById("plan-modal").innerHTML = data;
+      $("#plan-modal").css ("display", "flex");
+      $("#plan-modal").css ("display", "flex");
+      $("body").css("overflow", "hidden");
+    }
+  });
+}
+
+function closePlan(){
+  $("#plan-modal").css ("display", "none");
+  $("body").css("overflow", "auto");
+}
