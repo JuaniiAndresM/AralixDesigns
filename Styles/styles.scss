@@ -402,6 +402,8 @@ Landing Page
   width: 100%;
   height: calc(100vh - 120px);
 
+  overflow: hidden;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -410,7 +412,6 @@ Landing Page
   .landingpage__wrapper {
     width: calc(100% - 120px);
     height: 100%;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -458,6 +459,91 @@ Landing Page
         font-size: 2em;
       }
     }
+  }
+  .burbujas{
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+    .burbuja{
+      border-radius: 50%;
+      background: #fff;
+      opacity: .3;
+
+      position: absolute;
+      bottom: -150px;
+      
+
+      animation: burbujas 3s linear infinite;
+    }
+    .burbuja:nth-child(1){
+      width: 80px;
+      height: 80px;
+      left: 5%;
+      animation-duration: 3s;
+      animation-delay: 3s;
+    }
+    .burbuja:nth-child(2){
+      width: 120px;
+      height: 120px;
+      left: 35%;
+      animation-delay: 1.5s;
+      animation-duration: 4s;
+    }
+    .burbuja:nth-child(3){
+      width: 30px;
+      height: 30px;
+      left: 25%;
+      animation-delay: 4s;
+      animation-duration: 2s;
+    }
+    .burbuja:nth-child(4){
+      width: 90px;
+      height: 90px;
+      left: 55%;
+      animation-delay: 2s;
+      animation-duration: 8s;
+    }
+    .burbuja:nth-child(5){
+      width: 20px;
+      height: 20px;
+      left: 65%;
+      animation-delay: 0.5s;
+      animation-duration: 4s;
+    }
+    .burbuja:nth-child(6){
+      width: 100px;
+      height: 100px;
+      left: 80%;
+      animation-delay: 2s;
+      animation-duration: 3s;
+    }
+    .burbuja:nth-child(7){
+      width: 30px;
+      height: 30px;
+      left: 15%;
+      animation-delay: 1.6s;
+      animation-duration: 3s;
+    }
+    .burbuja:nth-child(8){
+      width: 100px;
+      height: 100px;
+      left: 25%;
+      animation-delay: 0.5s;
+      animation-duration: 3s;
+    }
+    .burbuja:nth-child(9){
+      width: 80px;
+      height: 80px;
+      left: 75%;
+      animation-duration: 3s;
+    }
+
   }
 }
 /*-------------------------------------------
@@ -916,83 +1002,14 @@ footer {
 Mail Design
 
 -------------------------------------------*/
-.mail-wrapper{
+.test-wrapper{
   width: 100%;
-  background: #aaa;
+  height: 100vh;
+  background: linear-gradient(45deg, $gradient-color1, $gradient-color2);
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .mail{
-    max-width: 600px;
-    background: linear-gradient(to right, $gradient-color1, $gradient-color2);
-
-    .mail-header{
-      width: 100%;
-      height: 300px;
-      padding: 20px;
-
-      text-align: center;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
-      img{
-        max-width: 300px;
-      }
-      p{
-        color: white;
-        margin: 5px 0;
-      }
-    }
-    .mail-content{
-      width: 100%;
-      padding: 40px 0;
-      margin-top: -120px;
-      position: relative;
-      z-index: 5;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
-      background: white;
-
-      p{
-        width: 80%;
-        margin: 20px 0;
-      }
-
-    }
-    .mail-footer{
-      width: 100%;
-      height: 50px;
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
-      text-align: center;
-
-      background: #161D27;
-
-      p{
-        color: #aaa;
-        font-size: 0.8em;
-        margin: 5px 10px;
-
-        b{
-          font-weight: normal;
-          color: white;
-        }
-      }
-    } 
-  }
 }
 /*-------------------------------------------
 
@@ -1016,7 +1033,22 @@ Animations
     transform: translateY(0%);
   }
 }
-
+@keyframes burbujas {
+  0%{
+    bottom: 0;
+    opacity: 0;
+  }
+  30%{
+    transform: translateX(30px);
+  }
+  50%{
+    opacity: .4;
+  }
+  100%{
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
 /*-------------------------------------------
 
 Responsive Design
