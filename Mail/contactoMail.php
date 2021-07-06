@@ -53,7 +53,7 @@ try {
                                 <tr>
                                     <td>
                                         <div class="mail-content" style="width: 100%; padding: 40px 0; margin-top: -120px; background: white;">
-                                            <h1 style="width: 80%; margin: 20px auto; color: #2a026e; font-family: Comfortaa;">Nueva Solicitud</h1>
+                                            <h1 style="width: 80%; margin: 20px auto; color: #2a026e; font-family: Comfortaa;">Nueva Solicitud de Contacto</h1>
                                             <p style="width: 80%; margin: 20px auto; font-family: Comfortaa; color: #555;">
                                                 <b>Nombre</b>: ' . $nombre . '
                                             </p>
