@@ -83,19 +83,7 @@ function scrollIndicator() {
 
 
 function elegirPlan(plan){
-  $.ajax({
-    type: "POST",
-    url: "Plan/modalPlan.php",
-    data: { 
-      Plan: plan
-    },
-    success: function (data) {
-      document.getElementById("plan-modal").innerHTML = data;
-      $("#plan-modal").css ("display", "flex");
-      $("#plan-modal").css ("display", "flex");
-      $("body").css("overflow", "hidden");
-    }
-  });
+  location.href = "Plan/" + plan;
 }
 
 function closePlan(){

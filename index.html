@@ -92,7 +92,10 @@
     <section class="landingpage">
       <div class="landingpage__wrapper">
         <div class="landingpage__arrow">
-          <i class="fas fa-chevron-down"></i>
+          <a href="/AralixDesigns/#Servicios">
+            <i class="fas fa-chevron-down"></i>
+          </a>
+          
         </div>
         <div class="landingpage__content">
           <h1 class="landingpage__title">
@@ -100,7 +103,9 @@
           </h1>
           <p>
             En <b>Aralix</b> ofrecemos servicios de diseño y desarrollo de
-            sitios web.
+            sitios web. <br />
+            Realizamos trabajos a medida, creando sitios modernos, atractivos, y
+            que se adapten a las necesidades de tu empresa.
           </p>
         </div>
         <div class="landingpage__illustration">
@@ -129,6 +134,11 @@
     <img class="vector-top" src="/AralixDesigns/media/svg/Vector.svg" alt="" />
     <section class="first-section" id="Servicios">
       <h1 class="title">Servicios</h1>
+      <h3>¿Qué podemos ofrecerte?</h3>
+      <p class="subtitle">
+        Aquí podrás ver los diferentes servicios y beneficios que obtendrás al
+        elegirnos.
+      </p>
       <div class="servicios-wrapper">
         <div class="servicios">
           <div class="servicios-img-wrapper">
@@ -136,6 +146,7 @@
           </div>
           <div class="servicios-info">
             <h2>Diseño Web</h2>
+            <hr />
             <p>
               En Aralix nos especializamos en el diseño y desarrollo de sitios
               web. Nuestro principal objetivo es fortalecer y aumentar la
@@ -150,12 +161,16 @@
               Según estudios recientes, más del 70% de las personas investigan
               en Internet antes de realizar una compra o adquirir un servicio.
             </p>
+            <a href="/AralixDesigns/#Planes"
+              ><i class="far fa-file"></i> Ver Planes</a
+            >
           </div>
         </div>
 
         <div class="servicios2">
           <div class="servicios-info">
             <h2>Responsive Design</h2>
+            <hr />
             <p>
               El concepto de Responsive Design refiere a la adaptación de su
               sitio web a diferentes tipos de dispositivos. Hoy en día las
@@ -179,6 +194,7 @@
           </div>
           <div class="servicios-info">
             <h2>Posicionamiento SEO</h2>
+            <hr />
             <p>
               El posicionamiento SEO comprende un conjunto de técnicas que se
               aplican a las páginas web.
@@ -198,6 +214,7 @@
         <div class="servicios2">
           <div class="servicios-info">
             <h2>Hosting Web</h2>
+            <hr />
             <p>
               Un hosting es un servicio en línea que le permite publicar su
               sitio en internet. <br />
@@ -208,6 +225,9 @@
               Si todavía no dispones de un hosting, o no sabes cómo tenerlo,
               ¡Podemos ayudarte!. Ofrecemos diferentes planes y servicios.
             </p>
+            <a href="/AralixDesigns/#Hosting"
+              ><i class="fas fa-server"></i> Ver Planes</a
+            >
           </div>
           <div class="servicios-img-wrapper">
             <img src="media/svg/Hosting.svg" alt="" />
@@ -223,10 +243,9 @@
 
     <!--
     
-        Planes
+        Planes Diseño Web
 
     -->
-    <div class="plan-modal" id="plan-modal"></div>
 
     <img class="vector-top" src="/AralixDesigns/media/svg/Vector.svg" alt="" />
     <section class="second-section" id="Planes">
@@ -263,6 +282,7 @@
             </p>
           </div>
           <button class="boton-plan" onclick="elegirPlan('OnePage')">
+            <i class="fas fa-clipboard-check"></i>
             Elegir Plan
           </button>
         </div>
@@ -289,7 +309,8 @@
               clara en una sola página.
             </p>
           </div>
-          <button class="boton-plan" onclick="elegirPlan('Multi Página')">
+          <button class="boton-plan" onclick="elegirPlan('Multi_Pagina')">
+            <i class="fas fa-clipboard-check"></i>
             Elegir Plan
           </button>
         </div>
@@ -316,9 +337,75 @@
               del día y desde cualquier lugar.
             </p>
           </div>
-          <button class="boton-plan" onclick="elegirPlan('Tienda Online')">
+          <button class="boton-plan" onclick="elegirPlan('Tienda_Online')">
+            <i class="fas fa-clipboard-check"></i>
             Elegir Plan
           </button>
+        </div>
+      </div>
+    </section>
+    <img
+      class="vector-bottom"
+      src="/AralixDesigns/media/svg/Vector.svg"
+      alt=""
+    />
+    <!--
+    
+        Hosting
+
+    -->
+    <img class="vector-top" src="/AralixDesigns/media/svg/Vector.svg" alt="" />
+    <section class="hosting" id="Hosting">
+      <h2 class="title">Hosting</h2>
+      <div class="second-section-header">
+        <h3>¿No disponés de un hosting?</h3>
+        <p>
+          Aquí podras ver los diferentes planes de hosting que ofrecemos. Estos
+          planes se le suman al precio final y son opcionales. Dentro de este
+          precio incluimos la configuración y mantenimiento de su sitio web.
+        </p>
+      </div>
+      <div class="planes-wrapper hosting-wrapper">
+        <div class="plan hosting-plan">
+          <div class="plan-logo">
+            <i class="fas fa-server"></i>
+          </div>
+          <div class="plan-content">
+            <h2>Hosting 1 Año</h2>
+            <div class="price">
+              <h3 class="price">U$S 100</h3>
+              <p>(IVA Incluido)</p>
+            </div>
+            <hr />
+            <p><i class="fas fa-check"></i> 100 GB de Almacenamiento SSD.</p>
+            <p><i class="fas fa-check"></i> Email Gratis.</p>
+            <p><i class="fas fa-check"></i> Certificado SSL.</p>
+            <p><i class="fas fa-check"></i> Dominio por 1 año.</p>
+            <p><i class="fas fa-check"></i> Bases de Datos ilimitadas.</p>
+            <p><i class="fas fa-check"></i> Acceso SSH.</p>
+            <p><i class="fas fa-check"></i> Mantenimiento y Configuración.</p>
+          </div>
+        </div>
+        <div class="plan hosting-plan">
+          <div class="plan-logo">
+            <i class="fas fa-server"></i>
+          </div>
+          <div class="plan-content">
+            <h2>Hosting 2 Año</h2>
+
+            <div class="price">
+              <h3 class="price">U$S 150</h3>
+              <p>(IVA Incluido)</p>
+            </div>
+            <hr />
+            <p><i class="fas fa-check"></i> 100 GB de Almacenamiento SSD.</p>
+            <p><i class="fas fa-check"></i> Email Gratis.</p>
+            <p><i class="fas fa-check"></i> Certificado SSL.</p>
+            <p><i class="fas fa-check"></i> Dominio por 1 año.</p>
+            <p><i class="fas fa-check"></i> Bases de Datos ilimitadas.</p>
+            <p><i class="fas fa-check"></i> Acceso SSH.</p>
+            <p><i class="fas fa-check"></i> Mantenimiento y Configuración.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -337,6 +424,7 @@
     <img class="vector-top" src="/AralixDesigns/media/svg/Vector.svg" alt="" />
     <section class="third-section" id="Contacto">
       <h2 class="title">Contacto</h2>
+      <h3>¿Tenés alguna consulta?</h3>
       <p>
         Si tenés alguna consulta, no olvides en contactarnos, y te responderemos
         a la brevedad.

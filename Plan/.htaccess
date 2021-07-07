@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteRule ^([a-zA-Z0-9_]+)$ ElegirPlan.php?Plan=$1
+RewriteRule ^Plan/([a-zA-Z0-9_]+)$ ElegirPlan.php

@@ -219,12 +219,14 @@ header {
 
       .links-wrapper {
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 100px);
 
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        margin-top: 80px;
 
         a {
           display: flex;
@@ -390,7 +392,94 @@ Login Frame
     }
   }
 }
+/*-------------------------------------------
 
+Burbujas Background
+
+-------------------------------------------*/
+.burbujas {
+  width: 100%;
+  height: 100vh;
+
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+  .burbuja {
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.3;
+
+    position: absolute;
+    bottom: -150px;
+
+    animation: burbujas 3s linear infinite;
+  }
+  .burbuja:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+  }
+  .burbuja:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    left: 35%;
+    animation-delay: 1.5s;
+    animation-duration: 4s;
+  }
+  .burbuja:nth-child(3) {
+    width: 30px;
+    height: 30px;
+    left: 25%;
+    animation-delay: 4s;
+    animation-duration: 2s;
+  }
+  .burbuja:nth-child(4) {
+    width: 90px;
+    height: 90px;
+    left: 55%;
+    animation-delay: 2s;
+    animation-duration: 8s;
+  }
+  .burbuja:nth-child(5) {
+    width: 20px;
+    height: 20px;
+    left: 65%;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+  }
+  .burbuja:nth-child(6) {
+    width: 100px;
+    height: 100px;
+    left: 80%;
+    animation-delay: 2s;
+    animation-duration: 3s;
+  }
+  .burbuja:nth-child(7) {
+    width: 30px;
+    height: 30px;
+    left: 15%;
+    animation-delay: 1.6s;
+    animation-duration: 3s;
+  }
+  .burbuja:nth-child(8) {
+    width: 100px;
+    height: 100px;
+    left: 25%;
+    animation-delay: 0.5s;
+    animation-duration: 3s;
+  }
+  .burbuja:nth-child(9) {
+    width: 80px;
+    height: 80px;
+    left: 75%;
+    animation-duration: 3s;
+  }
+}
 /*-------------------------------------------
 
 Landing Page
@@ -453,94 +542,18 @@ Landing Page
       display: flex;
       justify-content: center;
       align-items: center;
+      a{
+        padding: 10px;
+        transition: .5s;
+      }
+      a:hover{
+        transform: scale(1.3);
+      }
 
       i {
         color: white;
         font-size: 2em;
       }
-    }
-  }
-  .burbujas {
-    width: 100%;
-    height: 100vh;
-
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-
-    overflow: hidden;
-    .burbuja {
-      border-radius: 50%;
-      background: #fff;
-      opacity: 0.3;
-
-      position: absolute;
-      bottom: -150px;
-
-      animation: burbujas 3s linear infinite;
-    }
-    .burbuja:nth-child(1) {
-      width: 80px;
-      height: 80px;
-      left: 5%;
-      animation-duration: 3s;
-      animation-delay: 3s;
-    }
-    .burbuja:nth-child(2) {
-      width: 120px;
-      height: 120px;
-      left: 35%;
-      animation-delay: 1.5s;
-      animation-duration: 4s;
-    }
-    .burbuja:nth-child(3) {
-      width: 30px;
-      height: 30px;
-      left: 25%;
-      animation-delay: 4s;
-      animation-duration: 2s;
-    }
-    .burbuja:nth-child(4) {
-      width: 90px;
-      height: 90px;
-      left: 55%;
-      animation-delay: 2s;
-      animation-duration: 8s;
-    }
-    .burbuja:nth-child(5) {
-      width: 20px;
-      height: 20px;
-      left: 65%;
-      animation-delay: 0.5s;
-      animation-duration: 4s;
-    }
-    .burbuja:nth-child(6) {
-      width: 100px;
-      height: 100px;
-      left: 80%;
-      animation-delay: 2s;
-      animation-duration: 3s;
-    }
-    .burbuja:nth-child(7) {
-      width: 30px;
-      height: 30px;
-      left: 15%;
-      animation-delay: 1.6s;
-      animation-duration: 3s;
-    }
-    .burbuja:nth-child(8) {
-      width: 100px;
-      height: 100px;
-      left: 25%;
-      animation-delay: 0.5s;
-      animation-duration: 3s;
-    }
-    .burbuja:nth-child(9) {
-      width: 80px;
-      height: 80px;
-      left: 75%;
-      animation-duration: 3s;
     }
   }
 }
@@ -565,7 +578,8 @@ Section & First Section
 }
 .first-section,
 .second-section,
-.third-section {
+.third-section,
+.hosting {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -581,7 +595,15 @@ Section & First Section
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2em;
-    margin-bottom: 20px;
+  }
+  h3 {
+    color: $gradient-color2;
+    margin: 5px 0;
+  }
+  .subtitle {
+    width: 80%;
+    text-align: center;
+    color: #555;
   }
 
   .servicios-wrapper {
@@ -591,6 +613,8 @@ Section & First Section
     flex-direction: column;
     flex-wrap: wrap;
 
+    margin: 20px 0;
+
     hr {
       border: 1px solid $gradient-color2;
       width: 90%;
@@ -598,15 +622,16 @@ Section & First Section
 
     .servicios,
     .servicios2 {
-      width: 100%;
-
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+      padding: 10px;
 
-      margin: 10px 0;
-
+      margin: 10px 10px;
+      
+      background: linear-gradient(to right, $gradient-color1, $gradient-color2);
+      border-radius: 2em;
       .servicios-img-wrapper {
         min-width: 250px;
         img {
@@ -621,19 +646,40 @@ Section & First Section
         max-width: 700px;
 
         h2 {
-          background: linear-gradient(
-            to right,
-            $gradient-color1,
-            $gradient-color2
-          );
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: white;
           font-size: 1.5em;
         }
+        hr {
+          margin: 10px 0;
+          border: 1px solid white;
+        }
         p {
-          color: #555;
+          color: white;
           margin: 20px 0;
+        }
+        a{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+
+          border-radius: 10px;
+
+          color: white;
+
+          border: 2px solid white;
+
+          width: 200px;
+          height: 40px;
+
+          transition: .5s;
+
+          i{
+            margin-right: 10px;
+          }
+        }
+        a:hover{
+          transform: scale(1.1);
         }
       }
     }
@@ -652,21 +698,12 @@ Plan Modal
 
 -------------------------------------------*/
 .plan-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-
   width: 100%;
-  height: 100vh;
 
-  background-color: rgba($color: $gradient-color1, $alpha: 0.8);
-
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: 0.5s fadeOpening ease-in-out forwards;
 
   .plan {
     display: flex;
@@ -677,15 +714,13 @@ Plan Modal
     position: relative;
 
     max-width: 500px;
-    padding: 10px;
-    margin: 10px;
+    padding: 20px;
+    margin: 20px;
 
     background: white;
     border-radius: 2em;
 
-    animation: 1s loginform ease-in-out forwards;
-
-    .close{
+    .close {
       position: absolute;
       top: 30px;
       right: 30px;
@@ -695,14 +730,14 @@ Plan Modal
       outline: none;
       cursor: pointer;
 
-      transition: .5s;
+      transition: 0.5s;
 
-      i{
+      i {
         color: $gradient-color2;
         font-size: 2em;
       }
     }
-    .close:hover{
+    .close:hover {
       transform: scale(1.2);
     }
 
@@ -720,23 +755,23 @@ Plan Modal
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    h2{
+    h2 {
       color: $gradient-color2;
       font-size: 1.4em;
       margin: 5px 0;
     }
-    p{
+    p {
       width: 90%;
       text-align: center;
       font-size: 0.9em;
       color: $gradient-color2;
     }
-    hr{
+    hr {
       width: 90%;
       border: 1px solid $gradient-color2;
       margin: 10px 0;
     }
-    .plan-modal-content{
+    .plan-modal-content {
       margin-top: 10px;
       width: 90%;
       display: flex;
@@ -744,7 +779,8 @@ Plan Modal
       align-items: center;
       flex-direction: column;
 
-      input, textarea{
+      input,
+      textarea {
         width: 100%;
         height: 40px;
 
@@ -752,7 +788,7 @@ Plan Modal
 
         color: $gradient-color2;
 
-        font-family: 'Comfortaa', 'sans-serif';
+        font-family: "Comfortaa", "sans-serif";
 
         background: transparent;
         outline: none;
@@ -760,7 +796,7 @@ Plan Modal
         border-bottom: 1px solid $gradient-color2;
       }
 
-      input[type="submit"]{
+      input[type="submit"] {
         background: $gradient-color2;
         color: white;
         cursor: pointer;
@@ -768,7 +804,7 @@ Plan Modal
         border-radius: 10px;
       }
 
-      textarea{
+      textarea {
         height: 100px;
         resize: none;
       }
@@ -781,7 +817,8 @@ Plan Modal
 Second Section
 
 -------------------------------------------*/
-.second-section {
+.second-section,
+.hosting {
   .title {
     margin-bottom: 10px;
   }
@@ -891,12 +928,18 @@ Second Section
     .plan:hover {
       transform: scale(1.05);
     }
+    .hosting-plan {
+      min-height: 600px;
+      margin: 20px;
+    }
+  }
+  .hosting-wrapper {
+    justify-content: center;
   }
 }
 .third-section {
   p {
     color: #555;
-    margin-top: -10px;
     max-width: 900px;
     text-align: center;
   }
@@ -1072,7 +1115,8 @@ footer {
 404 & 403
 
 -------------------------------------------*/
-.error-wrapper, .enviado-wrapper {
+.error-wrapper,
+.enviado-wrapper {
   width: 100%;
   height: calc(100vh - 120px);
 
@@ -1080,7 +1124,9 @@ footer {
   justify-content: center;
   align-items: center;
 
-  .error-img, .enviado-img, .failed-img {
+  .error-img,
+  .enviado-img,
+  .failed-img {
     max-width: 400px;
     background-color: white;
     border-radius: 2em;
@@ -1133,13 +1179,14 @@ footer {
       transform: scale(1.1);
     }
   }
-  .enviado-img, .failed-img{
-    .enviado{
+  .enviado-img,
+  .failed-img {
+    .enviado {
       font-size: 10em;
       color: #77dd77;
       margin-bottom: 30px;
     }
-    .failed{
+    .failed {
       font-size: 10em;
       color: #dd7777;
       margin-bottom: 30px;
@@ -1211,8 +1258,7 @@ Animations
 Responsive Design
 
 -------------------------------------------*/
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1210px) {
   header {
     .header__content {
       width: 100%;
@@ -1227,12 +1273,17 @@ Responsive Design
       }
     }
   }
+  
+}
+
+@media screen and (max-width: 1000px) {
 
   .landingpage {
     .landingpage__wrapper {
       width: 90%;
       display: flex;
       flex-wrap: wrap-reverse;
+      justify-content: center;
 
       .landingpage__content {
         text-align: center;
@@ -1243,7 +1294,7 @@ Responsive Design
 
       .landingpage__illustration {
         img {
-          width: 180px;
+          width: fit-content;
         }
       }
       .landingpage__arrow {
